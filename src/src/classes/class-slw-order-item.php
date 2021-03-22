@@ -298,7 +298,7 @@ if( !class_exists('SlwOrderItem') ) {
 
 		}
 
-        private function productStockLocationsInputsAddPreviousStock($product_stock_location_terms, $item)
+        public function productStockLocationsInputsAddPreviousStock($product_stock_location_terms, $item)
         {
             // Additional locations to add on the fly
             $additionalLocations = array();
