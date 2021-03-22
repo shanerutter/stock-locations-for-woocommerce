@@ -36,6 +36,16 @@ if(!class_exists('SlwMain')) {
 		protected static $instance = null;
 		private          $plugin_settings;
 
+		// Class instances
+        protected $slwLocationTaxonomy;
+        protected $slwStockLocationsTab;
+        public $slwOrderItem;
+        protected $slwShortcodes;
+        protected $slwProductListing;
+        protected $slwProductRest;
+        protected $slwSettings;
+
+
 		/**
 		 * Class Constructor.
 		 * @since 1.0.0
@@ -47,13 +57,14 @@ if(!class_exists('SlwMain')) {
 			$this->init();
 
 			// Instantiate classes
-			new SLW\SRC\Classes\SlwLocationTaxonomy;
-			new SLW\SRC\Classes\SlwStockLocationsTab;
-			new SLW\SRC\Classes\SlwOrderItem;
-			new SLW\SRC\Classes\SlwShortcodes;
-			new SLW\SRC\Classes\SlwProductListing;
-			new SLW\SRC\Classes\SlwProductRest;
-			new SLW\SRC\Classes\SlwSettings;
+			$this->slwLocationTaxonomy = new SLW\SRC\Classes\SlwLocationTaxonomy;
+            $this->slwStockLocationsTab = new SLW\SRC\Classes\SlwStockLocationsTab;
+            $this->slwOrderItem = new SLW\SRC\Classes\SlwOrderItem;
+            $this->slwShortcodes = new SLW\SRC\Classes\SlwShortcodes;
+            $this->slwProductListing = new SLW\SRC\Classes\SlwProductListing;
+            $this->slwProductRest = new SLW\SRC\Classes\SlwProductRest;
+            $this->slwSettings = new SLW\SRC\Classes\SlwSettings;
+
 			// Frontend
 			new SLW\SRC\Classes\Frontend\SlwFrontendCart;
 			new SLW\SRC\Classes\Frontend\SlwFrontendProduct;
